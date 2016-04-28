@@ -1,3 +1,10 @@
+<?php session_start();
+if ($_SESSION['count']) {
+    $_SESSION['count'] = 0;
+} else {
+    $_SESSION['count']++;
+}
+?>
 <?php require('db.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +52,10 @@
     <div>
         <p>
             <?php
+            echo($_SESSION['count']);
+            echo(session_id());
+            echo('<br>');
+            $_SESSION['info'] = 'pero';
 
             $sql = "SELECT id, registracija, ime FROM automobili";
             $result = $conn->query($sql);
