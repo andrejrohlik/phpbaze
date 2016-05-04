@@ -1,10 +1,4 @@
-<?php session_start();
-if ($_SESSION['count']) {
-    $_SESSION['count'] = 0;
-} else {
-    $_SESSION['count']++;
-}
-?>
+<?php require('check.php'); ?>
 <?php require('db.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
